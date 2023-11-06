@@ -3,10 +3,7 @@ package com.fast.remoting.constants;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-/**
- * @author wangtao .
- * @createTime on 2020/10/2
- */
+
 public class RpcConstants {
 
 

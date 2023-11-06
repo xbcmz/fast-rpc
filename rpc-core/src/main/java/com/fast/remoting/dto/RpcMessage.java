@@ -3,10 +3,6 @@ package com.fast.remoting.dto;
 
 import lombok.*;
 
-/**
- * @author wangtao
- * @createTime 2020年10月2日 12:33
- */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

@@ -16,8 +16,13 @@ public class ZkServiceDiscoveryImpl implements ServiceDiscovery {
         String rpcServiceName = rpcRequest.getRpcServiceName();
         CuratorFramework zkClient = CuratorUtils.getZkClient();
         List<String> serviceUrlList = CuratorUtils.getChildrenNodes(zkClient, rpcServiceName);
-        // load balancing
-        String targetServiceUrl = serviceUrlList.get(0);
+
+        if (serviceUrlList.isEmpty()) {
+            throw new RuntimeException("没有找到指定的服务");
+        }
+        // 获取serviceUrlList中最后一个元素作为目标服务的URL
+        String targetServiceUrl = serviceUrlList.get(serviceUrlList.size() - 1);
+
         log.info("Successfully found the service address:[{}]", targetServiceUrl);
         String[] socketAddressArray = targetServiceUrl.split(":");
         String host = socketAddressArray[0];

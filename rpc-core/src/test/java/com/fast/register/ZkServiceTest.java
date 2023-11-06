@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import java.net.InetSocketAddress;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class ZkServiceTest {
 
     @Test
@@ -14,11 +16,14 @@ public class ZkServiceTest {
 
         // zk注册
         ServiceRegistry zkServiceRegistry = new ZkServiceRegistryImpl();
-        zkServiceRegistry.registerService("test", new InetSocketAddress("127.0.0.1", 8080));
+        InetSocketAddress givenInetSocketAddress = new InetSocketAddress("127.0.0.1", 8090);
+        zkServiceRegistry.registerService("test", givenInetSocketAddress);
 
         // zk发
         ServiceDiscovery zkServiceDiscovery = new ZkServiceDiscoveryImpl();
-        InetSocketAddress inetSocketAddress = zkServiceDiscovery.lookupService(new RpcRequest("test", "test", "test", new Object[0], new Class[0], "1.0.0", "test"));
+        InetSocketAddress acquiredInetSocketAddress = zkServiceDiscovery.lookupService(new RpcRequest("test", "test", "test", new Object[0], new Class[0], "", ""));
+
+        assertEquals(givenInetSocketAddress.toString(), acquiredInetSocketAddress.toString());
 
     }
 

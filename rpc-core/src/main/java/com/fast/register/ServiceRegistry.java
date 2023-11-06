@@ -4,7 +4,6 @@ import com.fast.extension.SPI;
 
 import java.net.InetSocketAddress;
 
-
 /**
  * 服务注册接口
  */
