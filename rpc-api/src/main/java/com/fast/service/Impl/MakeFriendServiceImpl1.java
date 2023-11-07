@@ -1,7 +1,8 @@
-package com.fast.serviceImpl;
+package com.fast.service.Impl;
+
 
 import com.fast.annotation.RpcService;
-import com.fast.rpc.api.MakeFriendService;
+import com.fast.service.MakeFriendService;
 
 @RpcService
 public class MakeFriendServiceImpl1 implements MakeFriendService {
@@ -12,6 +13,6 @@ public class MakeFriendServiceImpl1 implements MakeFriendService {
 
     @Override
     public String makeFriend(String name) {
-        return "我是" + name + "，我想和你交朋友！";
+        return name + "，我想和你交朋友！";
     }
 }

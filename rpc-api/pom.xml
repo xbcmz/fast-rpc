@@ -7,10 +7,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>rpc-client</artifactId>
+    <artifactId>rpc-api</artifactId>
     <packaging>jar</packaging>
 
-    <name>rpc-client</name>
+    <name>rpc-api</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -27,12 +27,6 @@
         <dependency>
             <groupId>com.fast</groupId>
             <artifactId>rpc-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.fast</groupId>
-            <artifactId>rpc-api</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
