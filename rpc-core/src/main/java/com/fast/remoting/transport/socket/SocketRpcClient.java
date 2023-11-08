@@ -15,7 +15,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @Slf4j
 public class SocketRpcClient implements RpcRequestTransport {
     private final ServiceDiscovery serviceDiscovery;
