@@ -8,21 +8,12 @@ import com.fast.service.MakeFriendService;
 
 
 public class SocketClientMain {
-    public static void main(String[] args) throws Throwable {
+    public static void main(String[] args) {
         RpcRequestTransport rpcRequestTransport = new SocketRpcClient();
-//        RpcServiceConfig rpcServiceConfig = new RpcServiceConfig();
-
-//        RpcClientProxy rpcClientProxy = new RpcClientProxy(rpcRequestTransport, rpcServiceConfig);
-
-
         RpcJdkProxy rpcJdkProxy = new RpcJdkProxy(rpcRequestTransport);
 
         MakeFriendService makeFriendService = rpcJdkProxy.getProxy(MakeFriendService.class);
         String friend = makeFriendService.makeFriend("石原里美");
         System.out.println(friend);
-
-//        MakeFriendService makeFriendService = rpcClientProxy.getProxy(MakeFriendService.class);
-//        String friend = makeFriendService.makeFriend("石原里美");
-//        System.out.println(friend);
     }
 }

@@ -1,13 +1,10 @@
 package com.fast.remoting.dto;
 
+import com.fast.enums.RpcResponseCodeEnum;
 import lombok.*;
 
 import java.io.Serializable;
 
-/**
- * @author shuang.kou
- * @createTime 2020年05月12日 16:15:00
- */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -31,7 +28,7 @@ public class RpcResponse<T> implements Serializable {
      */
     private T data;
 
-/*    public static <T> RpcResponse<T> success(T data, String requestId) {
+    public static <T> RpcResponse<T> success(T data, String requestId) {
         RpcResponse<T> response = new RpcResponse<>();
         response.setCode(RpcResponseCodeEnum.SUCCESS.getCode());
         response.setMessage(RpcResponseCodeEnum.SUCCESS.getMessage());
@@ -47,6 +44,6 @@ public class RpcResponse<T> implements Serializable {
         response.setCode(rpcResponseCodeEnum.getCode());
         response.setMessage(rpcResponseCodeEnum.getMessage());
         return response;
-    }*/
+    }
 
 }
