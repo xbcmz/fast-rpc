@@ -10,8 +10,10 @@ import com.fast.service.MakeFriendService;
 public class SocketClientMain {
     public static void main(String[] args) {
         RpcRequestTransport rpcRequestTransport = new SocketRpcClient();
-        RpcJdkProxy rpcJdkProxy = new RpcJdkProxy(rpcRequestTransport);
 
+//        MakeFriendService makeFriendService = new RpcCglibProxy(rpcRequestTransport).getProxy(MakeFriendService.class);
+
+        RpcJdkProxy rpcJdkProxy = new RpcJdkProxy(rpcRequestTransport);
         MakeFriendService makeFriendService = rpcJdkProxy.getProxy(MakeFriendService.class);
         String friend = makeFriendService.makeFriend("石原里美");
         System.out.println(friend);

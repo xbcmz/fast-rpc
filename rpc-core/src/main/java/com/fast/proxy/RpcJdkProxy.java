@@ -21,8 +21,8 @@ public class RpcJdkProxy implements InvocationHandler {
     }
 
     @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        log.info("invoked method: [{}]", method.getName());
+    public Object invoke(Object proxy, Method method, Object[] args) {
+        log.info("Jdk invoked method: [{}] 前置增强", method.getName());
         RpcRequest rpcRequest = RpcRequest.builder().methodName(method.getName())
                 .parameters(args)
                 .interfaceName(method.getDeclaringClass().getName())
@@ -36,6 +36,8 @@ public class RpcJdkProxy implements InvocationHandler {
         if (rpcRequestTransport instanceof SocketRpcClient) {
             rpcResponse = (RpcResponse<Object>) rpcRequestTransport.sendRpcRequest(rpcRequest);
         }
+
+        log.info("Jdk invoked method: [{}] 后置增强", method.getName());
         return rpcResponse.getData();
     }
 
