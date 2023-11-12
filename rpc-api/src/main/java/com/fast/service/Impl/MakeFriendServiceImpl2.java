@@ -8,7 +8,7 @@ import com.fast.service.MakeFriendService;
 public class MakeFriendServiceImpl2 implements MakeFriendService {
 
     static {
-        System.out.println("富婆勾搭中。。。。。。");
+        System.out.println("小富婆勾搭中。。。。。。");
     }
 
     @Override

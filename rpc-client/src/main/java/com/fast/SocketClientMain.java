@@ -15,7 +15,7 @@ public class SocketClientMain {
 
         RpcJdkProxy rpcJdkProxy = new RpcJdkProxy(rpcRequestTransport);
         MakeFriendService makeFriendService = rpcJdkProxy.getProxy(MakeFriendService.class);
-        String friend = makeFriendService.makeFriend("石原里美");
+        String friend = makeFriendService.makeFriend("SKH🌹");
         System.out.println(friend);
     }
 }

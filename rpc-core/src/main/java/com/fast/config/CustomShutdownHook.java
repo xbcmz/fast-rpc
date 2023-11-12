@@ -16,6 +16,9 @@ public class CustomShutdownHook {
         return CUSTOM_SHUTDOWN_HOOK;
     }
 
+    /**
+     * 清除所有的自定义关闭钩子
+     */
     public void clearAll() {
         log.info("addShutdownHook for clearAll");
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
