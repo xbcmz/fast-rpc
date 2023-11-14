@@ -46,8 +46,8 @@ public class RpcMessageEncoder extends MessageToByteEncoder<RpcMessage> {
 
     @Override
     protected void encode(ChannelHandlerContext ctx, RpcMessage rpcMessage, ByteBuf out) {
-        try {
-            out.writeBytes(RpcConstants.MAGIC_NUMBER);
+        try {            out.writeBytes(RpcConstants.MAGIC_NUMBER);
+
             out.writeByte(RpcConstants.VERSION);
             // leave a place to write the value of full length
             out.writerIndex(out.writerIndex() + 4);
